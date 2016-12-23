@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.sap.service.UserService;
 import com.sap.entity.User;
 
+import javax.jws.soap.SOAPBinding;
 
 
 @Controller
@@ -36,4 +37,13 @@ public class UserController {
 		map.put("pwd", paraString+String.valueOf(2));
 		return map;
 	}
+
+    @RequestMapping(value="/user/{parameters}",method = RequestMethod.GET)
+    public User getView(@PathVariable String parameters) {
+        //Map<Object, Object> map = new HashMap<Object, Object>();
+        User user =new User();
+        user.setUserName("leo"+parameters);
+        user.setUserPwd("pwd"+parameters);
+        return user;
+    }
 }
