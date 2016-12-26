@@ -55,7 +55,7 @@
   <!-- loading Spring configure file -->
   <context-param>
     <param-name>contextConfigLocation</param-name>
-    <param-value>classpath:/Conf/applicationContext.xml</param-value>
+    <param-value>classpath:Conf/applicationContext.xml</param-value>
   </context-param> 
   
   <!-- filter configure such as encoding filter-->

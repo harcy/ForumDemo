@@ -22,15 +22,24 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
-	@RequestMapping(value="/{userId}",method=RequestMethod.GET)
+	/*@RequestMapping(value="/{userId}",method=RequestMethod.GET)
 	public ModelAndView getUserInfoById(@PathVariable String userId){
 		ModelAndView mv = new ModelAndView("hello");
 		User user=userService.getUserById(userId);
 		mv.addObject("user",user);
 		return mv;
-	}
-	
-	@RequestMapping(value="/json/{paraString}",method=RequestMethod.GET)
+	}*/
+
+    @RequestMapping(value = "/{userId}", method = RequestMethod.GET)
+    public ModelAndView getProfileById(@PathVariable Integer userId) {
+        ModelAndView mv = new ModelAndView("hello");
+        User user = userService.selectUserById(userId);
+        mv.addObject("user", user);
+        return mv;
+        //return user;
+    }
+
+    @RequestMapping(value="/json/{paraString}",method=RequestMethod.GET)
 	public Map<String,String> getParameter(@PathVariable String paraString){
 		Map<String,String> map = new HashMap<String, String>();
 		map.put("admin", paraString+String.valueOf(1));
