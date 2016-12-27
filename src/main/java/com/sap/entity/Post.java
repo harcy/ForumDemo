@@ -3,7 +3,7 @@ package com.sap.entity;
 import java.util.Date;
 
 /**
- * Created by I337300 on 12/23/2016.
+ * Created by  on 12/23/2016.
  */
 public class Post {
 

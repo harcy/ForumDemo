@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sap.map.UserMapper">
+       <resultMap id="userMapper" type="com.sap.entity.User">
+              <!-- column from database mapping property from entity class -->
+              <id column="user_id" property="userId" jdbcType="INTEGER" />
+              <result column="user_name" property="userName" jdbcType="VARCHAR" />
+              <result column="password" property="userPwd" jdbcType="VARCHAR" />
+              <result column="avatar" property="userAvatar" jdbcType="VARCHAR" />
+              <result column="user_type" property="userType" jdbcType="TINYINT" />
+              <result column="locked" property="userLocked" jdbcType="TINYINT" />
+              <result column="credit" property="userCredit" jdbcType="INTEGER" />
+              <result column="last_visit" property="userLastVisit" jdbcType="VARCHAR" />
+              <result column="last_ip" property="userLastIp" jdbcType="VARCHAR" />
+       </resultMap>
+       <!-- 查询单条记录 -->
+       <select id="getUserById" parameterType="java.lang.Integer" resultMap="userMapper">
+              SELECT * FROM t_user WHERE user_id = #{userId}
+       </select>
+</mapper>
