@@ -86,15 +86,16 @@ public class User {
 
     @Override
     public String toString() {
-        return " User [ userId" + userId +
-                "userName" + userName +
-                "userPwd" + userPwd +
-                "userAvatar" + userAvatar +
-                "userType" + userType +
-                "userLocked" + userLocked +
-                "userCredit" + userCredit +
-                "userLastVisit" + userLastVisit +
-                "userLastIp" + userLastIp +
+        return " User [ " + "\n" +
+                "userId: " + userId + "\n" +
+                "userName: " + userName + "\n" +
+                "userPwd: " + userPwd + "\n" +
+                "userAvatar: " + userAvatar + "\n" +
+                "userType: " + userType + "\n" +
+                "userLocked: " + userLocked + "\n" +
+                "userCredit: " + userCredit + "\n" +
+                "userLastVisit: " + userLastVisit + "\n" +
+                "userLastIp: " + userLastIp + "\n" +
                 " ] ";
     }
 }
