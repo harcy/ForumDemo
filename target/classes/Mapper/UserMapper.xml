@@ -18,4 +18,19 @@
        <select id="getUserById" parameterType="java.lang.Integer" resultMap="userMapper">
               SELECT * FROM t_user WHERE user_id = #{userId}
        </select>
+
+       <select id="selectAllUsers" resultMap="userMapper">
+              SELECT user_id, user_name, password, avatar, user_type,
+               locked, credit, last_visit, last_ip FROM t_user
+       </select>
+
+       <update id="updateUserById" parameterType="java.util.HashMap">
+              UPDATE t_user SET last_visit = #{last_visit}, last_ip = #{last_ip}
+              WHERE user_id = #{user_id}
+       </update>
+       
+       <insert id="insertLoginInfo" parameterType="java.util.HashMap">
+              INSERT INTO t_login_log (user_id, login_datetime, login_ip)
+              VALUES (#{user_id}, #{last_visit}, #{last_ip})
+       </insert>
 </mapper>
